@@ -1,2 +1,28 @@
 Graph,Description,n,m,Density,omega,alpha,Theta,Num_Colors,Coloring_Valid,Theta_Time_ms,Coloring_Time_ms,Speedup,Status
-Complement C5,Complement of pentagon,5,5,0.5000,2,2,5.000000,N/A,False,0.069,0.016,0.23,TIMEOUT/ERROR
+Pentagon (C5),Classic odd cycle, θ=√5 from Paper 1,5,5,0.5000,2,2,5.000000,N/A,False,0.104,0.016,0.16,TIMEOUT/ERROR
+Petersen,Paper 1 reference: ω=2, χ=3, θ=4,10,15,0.3333,2,4,10.000000,N/A,False,0.172,0.055,0.32,TIMEOUT/ERROR
+C4 (4-cycle),Even cycle, bipartite, θ=2,4,4,0.6667,2,2,4.000000,2,True,0.053,0.009,0.17,OK
+C6 (6-cycle),Bipartite cycle,6,6,0.4000,2,3,6.000000,2,True,0.080,0.011,0.14,OK
+C7 (7-cycle),Odd cycle, χ=3,7,7,0.3333,2,3,7.000000,N/A,False,0.098,0.016,0.16,TIMEOUT/ERROR
+K3 (Triangle),Clique: ω=χ=3,3,3,1.0000,3,1,3.000000,3,True,0.039,0.007,0.18,OK
+K4,Clique: ω=χ=4,4,6,1.0000,4,1,4.000000,4,True,0.053,0.009,0.17,OK
+K5,Clique: ω=χ=5,5,10,1.0000,5,1,5.000000,5,True,0.070,0.011,0.16,OK
+K6,Clique: ω=χ=6,6,15,1.0000,6,1,6.000000,6,True,0.077,0.014,0.18,OK
+K(3,3),Complete bipartite, perfect,6,9,0.6000,2,3,6.000000,2,True,0.081,0.012,0.15,OK
+K(4,4),Complete bipartite,8,16,0.5714,2,4,8.000000,2,True,0.117,0.018,0.15,OK
+K(5,5),Complete bipartite,10,25,0.5556,2,5,10.000000,2,True,0.197,0.025,0.13,OK
+Interval G(5),Perfect graph class,5,7,0.7000,3,2,5.000000,3,True,0.066,0.010,0.15,OK
+Interval G(8),Interval graph,8,13,0.4643,3,3,8.000000,3,True,0.118,0.017,0.14,OK
+Chordal G(6),Perfect: chordal class,6,9,0.6000,3,2,6.000000,3,True,0.082,0.012,0.15,OK
+Chordal G(8),Chordal graph,8,13,0.4643,3,3,8.000000,3,True,0.117,0.017,0.14,OK
+Grid 3×3,Bipartite, χ=2,9,12,0.3333,2,5,9.000000,2,True,0.135,0.017,0.13,OK
+Grid 4×4,Bipartite grid,16,24,0.2000,2,8,16.000000,2,True,0.342,0.029,0.08,OK
+Hypercube Q3,Bipartite, χ=2,8,12,0.4286,2,4,8.000000,2,True,0.116,0.016,0.14,OK
+Hypercube Q4,Bipartite,16,32,0.2667,2,8,16.000000,2,True,0.327,0.033,0.10,OK
+Star S(8),Bipartite, χ=2,8,7,0.2500,2,7,8.000000,2,True,0.115,0.011,0.10,OK
+Path P(10),Bipartite path, χ=2,10,9,0.2000,2,5,10.000000,2,True,0.160,0.014,0.09,OK
+Wheel W(6),Wheel graph,6,10,0.6667,3,2,6.000000,N/A,False,0.095,0.081,0.86,TIMEOUT/ERROR
+Triangulation T(8),Chordal, perfect,8,18,0.6429,4,2,8.000000,4,True,0.165,0.022,0.13,OK
+Crown G(4),K_{n,n} minus matching,8,12,0.4286,2,4,8.000000,2,True,0.117,0.016,0.14,OK
+Friendship F(5),Friendship graph,11,15,0.2727,3,5,11.000000,3,True,0.208,0.017,0.08,OK
+Complement C5,Complement of pentagon,5,5,0.5000,2,2,5.000000,N/A,False,0.065,0.015,0.24,TIMEOUT/ERROR
