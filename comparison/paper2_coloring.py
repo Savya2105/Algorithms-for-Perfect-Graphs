@@ -542,7 +542,7 @@ class CombinatorialColouringSolver:
         Main entry point: Color the graph.
         """
         k = self.graph.get_omega()
-        return self.main_colouring_algorithm(self.graph, k)
+        return self.backtracking_colouring(self.graph, k)
 
     def verify_coloring(self, coloring):
         """

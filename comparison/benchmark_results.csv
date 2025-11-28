@@ -1,1 +1,2 @@
 Graph,Description,n,m,Density,omega,alpha,Theta,Num_Colors,Coloring_Valid,Theta_Time_ms,Coloring_Time_ms,Speedup,Status
+Complement C5,Complement of pentagon,5,5,0.5000,2,2,5.000000,N/A,False,0.069,0.016,0.23,TIMEOUT/ERROR

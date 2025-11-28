@@ -154,13 +154,6 @@ class LovaszTheta:
         if m == n * (n - 1) // 2:
             return float(n)
         
-        # Bipartite graphs: theta = sqrt(n)
-        if m > 0:
-            complement = graph.get_complement()
-            comp_omega = complement.get_omega()
-            if comp_omega == 2:  # Bipartite
-                return math.sqrt(n)
-        
         # Default: use approximation
         return LovaszTheta.compute_theta_eigenvalue_approximation(graph)
 

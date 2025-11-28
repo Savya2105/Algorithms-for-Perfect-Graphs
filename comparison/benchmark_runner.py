@@ -102,7 +102,8 @@ class BenchmarkRunner:
                 time_theta_exact = None
                 print(f"  Exact small graphs: ERROR - {str(e)[:50]}")
             
-            theta_best = theta_exact or theta_eigen or theta_simple
+            candidates = [t for t in [theta_simple, theta_eigen, theta_exact] if t is not None]
+            theta_best = max(candidates) if candidates else None
             time_theta_total = (time_theta_simple or 0) + (time_theta_eigen or 0) + (time_theta_exact or 0)
             
             # ============ PAPER 2: PERFECT GRAPH COLORING ============
@@ -235,24 +236,27 @@ class BenchmarkRunner:
             
             # Rows
             for r in self.results:
-                line = (
-                    f"{r['name']},"
-                    f"{r['description']},"
-                    f"{r['n']},"
-                    f"{r['m']},"
-                    f"{r['density']:.4f},"
-                    f"{r['omega']},"
-                    f"{r['alpha']},"
-                    f"{r['theta_best']:.6f if r['theta_best'] else 'N/A'},"
-                    f"{r['num_colors'] if r['num_colors'] else 'N/A'},"
-                    f"{r['coloring_valid']},"
-                    f"{r['time_theta_total']*1000:.3f if r['time_theta_total'] else 'N/A'},"
-                    f"{r['time_coloring']*1000:.3f if r['time_coloring'] else 'N/A'},"
-                    f"{r['speedup']:.2f if r['speedup'] else 'N/A'},"
-                    f"{r['status']}\n"
-                )
-                f.write(line)
-        
+                theta_str = f"{r['theta_best']:.6f}" if r['theta_best'] is not None else "N/A"
+                theta_time_str = f"{r['time_theta_total']*1000:.3f}" if r['time_theta_total'] is not None else "N/A"
+                color_time_str = f"{r['time_coloring']*1000:.3f}" if r['time_coloring'] is not None else "N/A"
+                speedup_str = f"{r['speedup']:.2f}" if r['speedup'] is not None else "N/A"
+            line = (
+                f"{r['name']},"
+                f"{r['description']},"
+                f"{r['n']},"
+                f"{r['m']},"
+                f"{r['density']:.4f},"
+                f"{r['omega']},"
+                f"{r['alpha']},"
+                f"{theta_str},"
+                f"{r['num_colors'] if r['num_colors'] is not None else 'N/A'},"
+                f"{r['coloring_valid']},"
+                f"{theta_time_str},"
+                f"{color_time_str},"
+                f"{speedup_str},"
+                f"{r['status']}\n"
+            )
+            f.write(line)
         print(f"Results exported to {filename}")
 
     def print_analysis_report(self):
